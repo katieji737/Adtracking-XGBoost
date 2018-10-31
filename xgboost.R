@@ -8,7 +8,7 @@ train <- fread("/Users/~/adtracking_dataset.csv",
                showProgress=F,
                colClasses=c("ip"="numeric","app"="numeric","device"="numeric","os"="numeric","channel"="numeric","click_time"="character","is_attributed"="numeric"))
 
-#test <- fread("/Users/katie/Desktop/R extra project/test.csv", 
+#test <- fread("/Users/~/test.csv", 
               #select =c("ip", "app", "device", "os", "channel", "click_time"),
               #showProgress=F,
               #colClasses=c("ip"="numeric","app"="numeric","device"="numeric","os"="numeric","channel"="numeric","click_time"="character"))
@@ -47,7 +47,7 @@ train[, ':='(hour = hour(click_time))
                                              ][,ip_app_hour := .N, by = "ip,app,hour"
                                                ][, c("ip","click_time", "is_attributed") := NULL]
 
-#write.csv(train, '/Users/katie/Desktop/train_interaction.csv')
+#write.csv(train, '/~/train_interaction.csv')
 
 invisible(gc())
 
