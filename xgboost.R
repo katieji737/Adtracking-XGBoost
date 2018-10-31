@@ -3,7 +3,7 @@ library(dplyr)
 library(xgboost)
 library(ggplot2)
 
-train <- fread("/Users/katie/Desktop/R extra project/adtracking_dataset.csv", 
+train <- fread("/Users/~/adtracking_dataset.csv", 
                select =c("ip", "app", "device", "os", "channel", "click_time", "is_attributed"),
                showProgress=F,
                colClasses=c("ip"="numeric","app"="numeric","device"="numeric","os"="numeric","channel"="numeric","click_time"="character","is_attributed"="numeric"))
